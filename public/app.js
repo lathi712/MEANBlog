@@ -30,7 +30,8 @@
 
         $scope.updatePost = function (post) {
             $http.put('/api/blogpost/'+post._id,post).then(function (success) {
-                $scope.post = '';
+                $scope.post.title = '';
+                $scope.post.body = '';
                 getAllPosts();
             },function (err) {
 
@@ -44,7 +45,8 @@
         function addPost(post) {
             $http.post('/api/blogpost',post).then(function (success) {
                 getAllPosts();
-                $scope.post = '';
+                $scope.post.title = '';
+                $scope.post.body = '';
             },function (err) {
 
             });
