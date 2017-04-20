@@ -14,7 +14,7 @@ mongoose.connect(mlab || mongoUrl);
 
 
 var PostSchema = mongoose.Schema({
-   title:{type:String,required:true,},
+   title:{type:String,required:true},
    body:{type:String},
    tag:{type:String,enum:['POLITICS','ECONOMY','EDUCATION']},
    posted:{type:Date,default:Date.now}
