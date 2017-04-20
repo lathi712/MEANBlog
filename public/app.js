@@ -44,6 +44,7 @@
         function addPost(post) {
             $http.post('/api/blogpost',post).then(function (success) {
                 getAllPosts();
+                $scope.post = '';
             },function (err) {
 
             });

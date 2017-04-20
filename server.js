@@ -4,11 +4,13 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = process.env.PORT || 3000;
+
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost:27017/blog');
+const mlab = process.env.MLAB_URI;
+const port = process.env.PORT || 3000;
+const mongoUrl = 'mongodb://localhost:27017/blog';
+mongoose.connect(mlab || mongoUrl);
 
 
 var PostSchema = mongoose.Schema({
